@@ -137,6 +137,8 @@ function dibujarPorClic() {
       dibujarLinea(colorLinea, xi, xf, yi, yf);
       dibujarLinea(colorLinea, xi, yi, espacio/2*(lineas -(l+1)), yf );
       dibujarLinea(colorLinea, xi, (ancho / 2) + (espacio/2*(lineas -l)), xf, yf );
+      dibujarLinea(colorLinea, xi, 0, xi, ancho);
+      dibujarLinea(colorLinea, 0, xi, ancho, xi);
       break;
       default:
 
