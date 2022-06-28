@@ -9,11 +9,11 @@
     <h1>Dibujando con Canvas</h1>
     <div class="container">
       <p>
-      Líneas <input type="text" value="20" id="texto_lineas" size="1">
+      Líneas <input type="text" value="5" id="texto_lineas" size="1">
       Color  <input type="color" value="#00eeff" id="color_Picker">
       Tipo
       <select class="" name="direccion" id="direcciondeldibujo">
-        <option value="" selected disabled hidden>Elige</option>
+        <option value="star">Estrella</option>
         <optgroup label="Malla">
           <option value="tl">Top - Left</option>
           <option value="tr">Top - Right</option>
@@ -21,6 +21,10 @@
           <option value="br">Bottom - Right</option>
         </optgroup>
         <optgroup label="Punto de fuga">
+          <option value="pftl">Top - Left</option>
+          <option value="pftr">Top - Right</option>
+          <option value="pfbl">Bottom - Left</option>
+          <option value="pfbr">Bottom - Right</option>
           <option value="tc">Top - Central</option>
           <option value="bc">Bottom - Central</option>
           <option value="ml">Middle - Left</option>

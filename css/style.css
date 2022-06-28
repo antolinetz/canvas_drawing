@@ -12,9 +12,7 @@ body {
 }
 
 #mi_dibujo {
-  background: #0f0c29;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: rgba(255, 255, 255, 0.05);
   -webkit-border-radius: 7px;
   border-radius: 7px;
   width: 500px;
@@ -26,7 +24,7 @@ h1 {
   font-family: 'Gochi Hand', cursive;
   text-align: center;
   font-size: 3rem;
-  margin-top: 7%
+  margin-top: 5%
 }
 p {
   text-align: center;
@@ -66,11 +64,11 @@ select#direcciondeldibujo option, select#direcciondeldibujo optgroup {
    color: white;
    border-radius: 25px;
    display: block;
-   margin: 10px auto 0;
+   margin: 20px auto 0;
    border-color: #00c9b7 !important;
    border-style: solid !important;
-   font-size: 1em;
-   font-family: 'Black Han Sans', sans-serif;
+   font-size: 1.25em;
+   font-family: 'Gochi Hand', cursive;
    text-shadow: 2px 3px 0px rgba(0, 0, 0, 0.5);
 
  }
@@ -79,4 +77,5 @@ select#direcciondeldibujo option, select#direcciondeldibujo optgroup {
    background-position: right center; /* change the direction of the change here */
    color: #fff;
    text-decoration: none;
+   outline: none !important;
  }

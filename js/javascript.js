@@ -25,12 +25,12 @@ function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal) { //En el paré
   lienzo.lineTo(xfinal, yfinal); //punto de llegada de la línea
   lienzo.stroke();
   lienzo.closePath(); //finalizar la línea y dejar de dibujar
+
 }
 
 console.log(dibujarLinea);
 
 function dibujarPorClic() {
-
   var colorLinea = colorPicker.value;
   var lineas = parseInt(texto.value); //cantidad de lineas
   var espacio = ancho / lineas;
@@ -44,72 +44,104 @@ function dibujarPorClic() {
 
     switch (dirdibujo.value) {
       case "tl":
-        var xi = 0;
-        var yf = ancho;
+        xi = 0;
+        yf = ancho;
         dibujarLinea(colorLinea, xi, yi, xf, yf);
         break;
       case "tr":
-        var xi = ancho;
-        var xf = ancho - espacio * (l + 1);
-        var yf = ancho;
+        xi = ancho;
+        xf = ancho - espacio * (l + 1);
+        yf = ancho;
         dibujarLinea(colorLinea, xi, yi, xf, yf);
         break;
       case "br":
-        var xi = ancho;
-        var xf = ancho - espacio * (l + 1);
-        var yi = ancho - espacio * l;
-        var yf = 0;
+        xi = ancho;
+        xf = ancho - espacio * (l + 1);
+        yi = ancho - espacio * l;
+        yf = 0;
         dibujarLinea(colorLinea, xi, yi, xf, yf);
         break;
       case "bl":
-        var xi = 0;
-        var yi = ancho - espacio * l;
-        var yf = 0;
+        xi = 0;
+        yi = ancho - espacio * l;
+        yf = 0;
+        dibujarLinea(colorLinea, xi, yi, xf, yf);
+        break;
+      case "pftl":
+        xi = 0;
+        yi = 0;
+        yf = ancho;
+        dibujarLinea(colorLinea, xi, yi, xf, yf);
+        break;
+      case "pfbl":
+        xi = 0;
+        yi = ancho;
+        yf = 0;
+        dibujarLinea(colorLinea, xi, yi, xf, yf);
+        break;
+      case "pftr":
+        xi = ancho;
+        yi = 0;
+        yf = ancho;
+        xf = ancho - espacio * ( l + 1);
+        dibujarLinea(colorLinea, xi, yi, xf, yf);
+        break;
+      case "pfbr":
+        xi = ancho;
+        yi = ancho;
+        yf = 0;
+        xf = ancho - espacio * (l+1);
         dibujarLinea(colorLinea, xi, yi, xf, yf);
         break;
       case "tc":
-        var espacio = espaciopf;
-        var xi = ancho / 2;
-        var yi = 0;
-        var xf = espacio * l;
-        var yf = ancho;
+        espacio = espaciopf;
+        xi = ancho / 2;
+        yi = 0;
+        xf = espacio * l;
+        yf = ancho;
         dibujarLinea(colorLinea, xi, yi, xf, yf);
         break;
       case "bc":
-        var espacio = espaciopf;
-        var xi = ancho / 2;
-        var yi = ancho;
-        var xf = espacio * l;
-        var yf = 0;
+        espacio = espaciopf;
+        xi = ancho / 2;
+        yi = ancho;
+        xf = espacio * l;
+        yf = 0;
         dibujarLinea(colorLinea, xi, yi, xf, yf);
         break;
       case "ml":
-        var espacio = espaciopf;
-        var xi = 0;
-        var yi = ancho / 2;
-        var xf = ancho
-        var yf = espacio * l;
+        espacio = espaciopf;
+        xi = 0;
+        yi = ancho / 2;
+        xf = ancho;
+        yf = espacio * l;
         dibujarLinea(colorLinea, xi, yi, xf, yf);
         break;
       case "mr":
-        var espacio = espaciopf;
-        var xi = ancho;
-        var yi = ancho / 2;
-        var xf = 0
-        var yf = espacio * l;
+        espacio = espaciopf;
+        xi = ancho;
+        yi = ancho / 2;
+        xf = 0;
+        yf = espacio * l;
         dibujarLinea(colorLinea, xi, yi, xf, yf);
         break;
-      default:
-      var espacio = espaciopf;
-      var xi = ancho / 2;
-      var yi = 0;
-      var xf = espacio * l;
-      var yf = ancho;
+      case "star":
+      xi = ancho / 2;
+      xf = ancho / 2 + (espacio / 2 * (l + 1));
+      yi = yi / 2;
+      yf = ancho / 2;
       dibujarLinea(colorLinea, xi, yi, xf, yf);
+      dibujarLinea(colorLinea, xi, xf, yi, yf);
+      dibujarLinea(colorLinea, xi, yi, espacio/2*(lineas -(l+1)), yf );
+      dibujarLinea(colorLinea, xi, (ancho / 2) + (espacio/2*(lineas -l)), xf, yf );
+      break;
+      default:
+
     }
+  console.log("linea " + l);
   }
 
   //bordes
-//  dibujarLinea(colorLinea, ancho/2, 0, ancho, ancho);
+
 
 }
