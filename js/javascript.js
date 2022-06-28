@@ -2,7 +2,6 @@ var d = document.getElementById("mi_dibujo");
 var lienzo = d.getContext("2d"); //Este es el contexto del canvas
 // console.log para ver los atribustos del lienzo
 var ancho = d.width;
-console.log(lienzo);
 var texto = document.getElementById("texto_lineas");
 var boton = document.getElementById("botoncito");
 var colorPicker = document.getElementById("color_Picker");
@@ -26,6 +25,10 @@ function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal) { //En el paré
   lienzo.stroke();
   lienzo.closePath(); //finalizar la línea y dejar de dibujar
 
+}
+
+function resetLienzo() {
+  lienzo.clearRect(0, 0, d.width, d.height);
 }
 
 console.log(dibujarLinea);

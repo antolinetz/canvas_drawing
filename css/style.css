@@ -30,7 +30,7 @@ p {
   text-align: center;
 }
 
-#texto_lineas, select#direcciondeldibujo {
+#texto_lineas, select#direcciondeldibujo, .btn-reset {
   background: rgba(255,255,255,0.05);
   outline: none;
   border-radius: 10px;
@@ -52,6 +52,10 @@ input[type=text]#texto_lineas:focus {
 select#direcciondeldibujo option, select#direcciondeldibujo optgroup {
   color: #000;
   font-size: .75rem
+}
+
+.btn-reset:hover, .btn-reset:focus {
+  background: rgba(255,255,255,0.04);
 }
 
 .btn-grad {
